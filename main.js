@@ -16,7 +16,7 @@ $("#game-canvas").mousemove(function(event){
   cursor.y=event.offsetY;
 });
 $("#game-canvas").click(function(){
- if(cueor.x>576)&&cursor.x<640
+ if(cursor.x>576&&cursor.x<640
  &&cursor.y>416&&cursor.y<480){
    isbuilding=ture;
  }
