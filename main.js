@@ -12,12 +12,20 @@ var FPS=60;
 var cursor={x:0,y:0}
 
 $("#game-canvas").mousemove(function(event){
-  cursor.x=event.pageX;
-  cursor.y=event.pageY;
+  cursor.x=event.offsetX;
+  cursor.y=event.offsetY;
 });
+$("#game-canvas").click(function(){
+ if(cueor.x>576)&&cursor.x<640
+ &&cursor.y>416&&cursor.y<480){
+   isbuilding=ture;
+ }
+});
+
+
 function draw(){
-  ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(towerImg,cursor.x,cursor.y);
+  ctx.drawImage(bgImg,cursor.x,cursor.y);
+  ctx.drawImage(towerImg,0,0);
   ctx.drawImage(towerbuttonImg, 576, 416,64,64);
 }
 
