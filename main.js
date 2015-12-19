@@ -12,8 +12,9 @@ var tower = {
 };
 
 function draw(){
-  ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(towerImg, hero.x, hero.y);
+  ctx.drawImage(bgImg,576,
+  416);
+  ctx.drawImage(towerImg, tower.x, tower.y);
 }
 
 // setTimeout(draw,1000);
