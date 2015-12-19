@@ -5,7 +5,10 @@ var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var towerbuttonImg = document.createElement("img");
 towerbuttonImg.src = "images/tower-btn.png";
-
+$("#game-cauvas").mousemove(function(event){
+  cursor.x=event.pageX;
+  cursor.y=event.pageY;
+});
 function draw(){
   ctx.drawImage(bgImg,0,
   0);
