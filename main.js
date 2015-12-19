@@ -16,8 +16,8 @@ $("#game-canvas").mousemove(function(event){
   cursor.y=event.pageY;
 });
 function draw(){
-  ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(towerImg,0,0);
+  ctx.drawImage(bgImg,cursor.x,cursor.y);
+  ctx.drawImage(towerImg,,0);
   ctx.drawImage(towerbuttonImg, 576, 416,64,64);
 }
 
