@@ -9,7 +9,7 @@ towerbuttonImg.src = "images/tower-btn.png";
 function draw(){
   ctx.drawImage(bgImg,0,
   0);
-  ctx.drawImage(towerbuttonImg, 576, 416);
+  ctx.drawImage(towerbuttonImg, 576, 416,64,64);
 }
 
 // setTimeout(draw,1000);
