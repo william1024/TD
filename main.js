@@ -4,7 +4,7 @@ var ctx = canvas.getContext("2d");
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var towerImg = document.createElement("img");
-towerImg.src = "images/tower-bin.png";
+towerImg.src = "images/tower-btn.png";
 
 var tower = {
   x: 0,
