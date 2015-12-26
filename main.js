@@ -9,7 +9,7 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 
 var FPS=60;
-var isbuilding = fales
+var isbuilding = false;
 var cursor={x:0,y:0}
 var tower = {};
 var enemy = { 
