@@ -17,6 +17,10 @@ var enemy = {
 	y:480-32,
 	direction:{x:0,y:-1},
 	speed:64
+	move:fuction(){
+	this.x+=this.direction.x*this.speed/FPS;
+	this.y+=this.direction.y*this.speed/FPS;
+	}
 };
 
 var slimeImg = document.createElement("img");
