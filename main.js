@@ -24,8 +24,8 @@ $("#game-canvas").click(function(){
 
 
 function draw(){
-  ctx.drawImage(towerImg,cursor.x,cursor.y);
   ctx.drawImage(bgImg,0,0);
+  ctx.drawImage(towerImg,cursor.x,cursor.y);
   ctx.drawImage(towerbuttonImg, 576, 416,64,64);
 }
 
