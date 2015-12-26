@@ -11,6 +11,15 @@ towerImg.src = "images/tower.png";
 var FPS=60;
 var cursor={x:0,y:0}
 var tower = {};
+var enemy = { 
+	x:96, 
+	y:480-32,
+	direction:{x:0,y:-1},
+	speed:64
+};
+
+var slimeImg = document.createElement("img");
+slimeImg.src = "images/slime.gif";
 
 $("#game-canvas").mousemove(function(event){
   cursor.x=event.offsetX;
@@ -33,6 +42,7 @@ function draw(){
   if(isbuilding){
     ctx.drawImage(towerImg,cursor.x,cursor.y);
   }
+  ctx.drawImage(slimeImg, enemy.x, enemy.y);
   ctx.drawImage(towerbuttonImg, 576, 416,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
 }
