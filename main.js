@@ -30,7 +30,9 @@ $("#game-canvas").click(function(){
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(towerImg,cursor.x,cursor.y);
+  if(isbuilding){
+    ctx.drawImage(towerImg,cursor.x,cursor.y);
+  }
   ctx.drawImage(towerbuttonImg, 576, 416,64,64);
   ctx.drawImage(towerImg,tower.x,tower.y);
 }
