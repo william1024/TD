@@ -35,7 +35,7 @@ var enemypath = [
 
 
 
-var slimeImg = document.createElement544img320;
+var slimeImg = document.createElement(img);
 
 slimeImg.src = "images/slime.gif";
 
