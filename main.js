@@ -23,9 +23,22 @@ var enemy = {
 	}
 };
 
-var slimeImg = document.createElement("img");
-slimeImg.src = "images/slime.gif";
+var enemypath = [
+        {x:96,y:64},	
+	{x:384,y:64},
+	{x:384,y:192},
+	{x:224,y:192},
+	{x:224,y:320},
+	{x:544,y:320},
+	{x:544,y:96}
+];
 
+
+
+var slimeImg = document.createElement544img320;
+
+{x:544,y:96}slimeImg.src = "images/slime.gif";
+;
 $("#game-canvas").mousemove(function(event){
   cursor.x=event.offsetX;
   cursor.y=event.offsetY;
