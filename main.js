@@ -37,7 +37,7 @@ var enemypath = [
 
 var slimeImg = document.createElement544img320;
 
-{x:544,y:96}slimeImg.src = "images/slime.gif";
+slimeImg.src = "images/slime.gif";
 
 $("#game-canvas").mousemove(function(event){
   cursor.x=event.offsetX;
