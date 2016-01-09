@@ -79,3 +79,15 @@ if(     pointX >= targetX
         return false;
 }
 }
+
+function getUnitVector (srcX, srcY, targetX, targetY) {
+    var offsetX = targetX - srcX;
+    var offsetY = targetY - srcY;
+    var distance = Math.sqrt( Math.pow(offsetX,2) + Math.pow(offsetY,2) );
+    var unitVector = {
+        x: offsetX/distance,
+        y: offsetY/distance
+    };
+    return unitVector;
+}
+
