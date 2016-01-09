@@ -68,3 +68,14 @@ function draw(){
 
 // setTimeout(draw,1000);
 setInterval(draw, 16);
+function isCollided ( pointX, pointY, targetX, targetY, targetWidth, targetHeight ) {
+if(     pointX >= targetX
+        &&  pointX <= targetX + targetWidth
+        &&  pointY >= targetY
+        &&  pointY <= targetY + targetHeight
+){
+        return true;
+} else {
+        return false;
+}
+}
