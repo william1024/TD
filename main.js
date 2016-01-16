@@ -36,7 +36,7 @@ function Enemy(){
 }
 
 
-var enemypath = [
+var enemyPath = [
         {x:96,y:64},	
 	{x:384,y:64},
 	{x:384,y:192},
