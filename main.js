@@ -14,11 +14,11 @@ var cursor={x:0,y:0}
 var tower = {};
 var enemies = new Enemy();
 function Enemy(){ 
-        this.x:96, 
-	this.y:480-32,
-	this.direction:{x:0,y:-1},
-	this.speed:64,
-	this.move:function(){
+        this.x = 96;
+	this.y=480-32;
+	this.direction={x:0,y:-1};
+	this.speed=64;
+	this.move=function(){
         if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
             this.x = enemyPath[this.pathDes].x;
             this.y = enemyPath[this.pathDes].y;
