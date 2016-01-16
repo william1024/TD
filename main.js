@@ -1,6 +1,6 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-var clock=0
+var clock = 0;
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var towerbuttonImg = document.createElement("img");
@@ -12,7 +12,7 @@ var FPS=60;
 var isbuilding = false;
 var cursor={x:0,y:0}
 var tower = {};
-var enemies = new Enemy();
+var enemies = [];
 function Enemy(){ 
         this.x = 96;
 	this.y=480-32;
@@ -70,7 +70,7 @@ $("#game-canvas").click(function(){
 
 function draw(){
 	if ( clock%80==0 ) {
-	var newEnemy = new Enemy();
+		var newEnemy = new Enemy();
 		enemies.push(newEnemy);
 	}
 
