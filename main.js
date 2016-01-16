@@ -14,11 +14,11 @@ var cursor={x:0,y:0}
 var tower = {};
 var enemy = new Enemy();
 function Enemy(){ 
-	x:96, 
-	y:480-32,
-	direction:{x:0,y:-1},
-	speed:64,
-	move:function(){
+        this.x:96, 
+	this.y:480-32,
+	this.direction:{x:0,y:-1},
+	this.speed:64,
+	this.move:function(){
 		this.x+=this.direction.x*this.speed/FPS;
 		this.y+=this.direction.y*this.speed/FPS;
 	}
