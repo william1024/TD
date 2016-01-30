@@ -14,6 +14,20 @@ var cursor={x:0,y:0}
 var tower = {
 	range: 96,
 	aimingEnemyId: null
+        searchEnemy: function(){
+        for(var i=0; i<enemies.length; i++){
+            var distance = Math.sqrt( 
+                Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
+            );
+            if (distance<=this.range) {
+                this.aimingEnemyId = i;
+                return;
+            }
+        }
+        this.aimingEnemyId = null;
+    }
+};
+
 };
 var enemies = [];
 function Enemy(){ 
@@ -91,7 +105,11 @@ function draw(){
 			ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
 		}
 	}
-
+	tower.searchEnemy();
+        if ( tower.aimingEnemyId!=null ) {
+    var id = tower.aimingEnemyId;
+    ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
+}
 	
 	if(isbuilding){
 		ctx.drawImage(towerImg,cursor.x,cursor.y);
