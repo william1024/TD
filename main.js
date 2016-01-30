@@ -88,6 +88,8 @@ function draw(){
 	ctx.drawImage(slimeImg, enemy.x, enemy.y);
 	ctx.drawImage(towerbuttonImg, 576, 416,64,64);
 	ctx.drawImage(towerImg,tower.x,tower.y);
+	ctx.fillText( "hp", 100, 100 );
+	ctx.fillStyle = "white";
 	clock++;
 }
 
