@@ -7,7 +7,7 @@ var towerbuttonImg = document.createElement("img");
 towerbuttonImg.src = "images/tower-btn.png";
 var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
-
+var hp = 100;
 var FPS=60;
 var isbuilding = false;
 var cursor={x:0,y:0}
@@ -88,7 +88,7 @@ function draw(){
 	// ctx.drawImage(slimeImg, enemy.x, enemy.y);
 	ctx.drawImage(towerbuttonImg, 576, 416,64,64);
 	ctx.drawImage(towerImg,tower.x,tower.y);
-	ctx.fillText( "hp", 100, 100 );
+	ctx.fillText( "hp"+hp, 100, 100 );
 	ctx.font = "24px Arial";
 	ctx.fillStyle = "white";
 	clock++;
