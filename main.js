@@ -89,6 +89,7 @@ function draw(){
 	ctx.drawImage(towerbuttonImg, 576, 416,64,64);
 	ctx.drawImage(towerImg,tower.x,tower.y);
 	ctx.fillText( "hp", 100, 100 );
+	ctx.font = "24px Arial";
 	ctx.fillStyle = "white";
 	clock++;
 }
