@@ -21,24 +21,28 @@ function Enemy(){
 	this.pathDes = 0;
 	this.move=function(){
         if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
-            this.x = enemyPath[this.pathDes].x;
-            this.y = enemyPath[this.pathDes].y;
-            this.pathDes++;
-            var unitVector = getUnitVector( this.x, this.y, enemyPath[this.pathDes].x, enemyPath[this.pathDes].y );
-            this.direction.x = unitVector.x;
-            this.direction.y = unitVector.y;
+            if( this.pathDes === 6){
+            	this.hp = 0;
+            } else {
+	            this.x = enemyPath[this.pathDes].x;
+	            this.y = enemyPath[this.pathDes].y;
+	            this.pathDes++;
+	            var unitVector = getUnitVector( this.x, this.y, enemyPath[this.pathDes].x, enemyPath[this.pathDes].y );
+	            this.direction.x = unitVector.x;
+	            this.direction.y = unitVector.y;
+            }
         } else {
             // this.x += this.direction.x * this.speed/FPS;
             this.x = this.x + this.direction.x * this.speed/FPS;
             // this.y += this.direction.y * this.speed/FPS;
             this.y = this.y + this.direction.y * this.speed/FPS;
         }
-    };
+	};
 }
 
 
 var enemyPath = [
-        {x:96,y:64},	
+    {x:96,y:64},	
 	{x:384,y:64},
 	{x:384,y:192},
 	{x:224,y:192},
@@ -77,8 +81,12 @@ function draw(){
 
 	ctx.drawImage(bgImg,0,0);
 	for(var i=0; i<enemies.length; i++){
-		enemies[i].move();
-		ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
+		if(enemies[i].hp<=0){
+		enemies.splice(i,1)
+		} else {
+			enemies[i].move();
+			ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
+		}
 	}
 
 	
@@ -91,10 +99,6 @@ function draw(){
 	ctx.fillText( "hp:"+hp, 50, 50 );
 	ctx.font = "24px Arial";
 	ctx.fillStyle = "white";
-	for(var i=0; i<enemies.length; i++){
-enemies[i].move();
-ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
-}
 	clock++;
 }
 
