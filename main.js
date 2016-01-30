@@ -12,8 +12,8 @@ var FPS=60;
 var isbuilding = false;
 var cursor={x:0,y:0}
 var tower = {
-	tower.range = 96
-	tower.aimingEnemyId = null
+	range: 96,
+	aimingEnemyId: null
 };
 var enemies = [];
 function Enemy(){ 
