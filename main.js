@@ -91,6 +91,10 @@ function draw(){
 	ctx.fillText( "hp:"+hp, 50, 50 );
 	ctx.font = "24px Arial";
 	ctx.fillStyle = "white";
+	for(var i=0; i<enemies.length; i++){
+enemies[i].move();
+ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
+}
 	clock++;
 }
 
