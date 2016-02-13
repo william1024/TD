@@ -142,6 +142,10 @@ function draw(){
 	    ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
 	}
 	
+	for(var i = 0;i < cannonballs.length; i++)
+	var cannonballImg = document.createElement("img");
+        cannonballImg.src = "images/cannon-ball.png";
+
 	if(isbuilding){
 		ctx.drawImage(towerImg,cursor.x,cursor.y);
 	}
