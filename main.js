@@ -24,21 +24,26 @@ var tower = {
 	fireRate:1,
 	readyToShootTime:1,
 	searchEnemy: function(){
+		this.readyToShootTime -= 1/FPS
 		for(var i=0; i<enemies.length; i++){
-	        var distance = Math.sqrt( 
-	            Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
-	        );
-	        if (distance<=this.range) {
-	            this.aimingEnemyId = i;
-	            return;
-	        }
+			var distance = Math.sqrt( 
+			    Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
+			);
+			if (distance<=this.range) {
+			    this.aimingEnemyId = i;
+			    if (this.readyToShootTime<=0) {
+                    this.shoot();
+                    this.readyToShootTime = this.fireRate;
+                }
+			    return;
+			}
 	    }
         this.aimingEnemyId = null;
     },
     shoot: function(){
         var newCannonball = new Cannonball(this);
         cannonballs.push( newCannonball );
-    f}
+    }
 };
 
 
