@@ -9,6 +9,10 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
 var crosshairImg = document.createElement("img");
 crosshairImg.src = "images/crosshair.png";
+var cannonballImg = document.createElement("img");
+cannonballImg.src = "images/cannon-ball.png";
+
+
 
 var hp = 100;
 var FPS=60;
@@ -37,12 +41,16 @@ var tower = {
     f}
 };
 
-};
 
-var connonballs = []
-function Connonball () {
+
+var cannonballs = []
+function Cannonball (tower) {
     this.speed = 320;
     this.damage = 5;
+    var aimedEnemy = enemies[tower.aimingEnemyId];
+    this.x = tower.x+16;
+    this.y = tower.y;
+    this.direction = getUnitVector(this.x, this.y, aimedEnemy.x, aimedEnemy.y);
 }
 
 
