@@ -147,11 +147,14 @@ function draw(){
 	    ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
 	}
 	
-	for(var i = 0;i < cannonballs.length; i++){
-	ctx.drawImage( 
-        cannonballImage,cannonballs[i].x,cannonballs[i].y 
-        );
-	}
+        for (var i=0; i<enemies.length; i++){
+		cannonballs[i].move();
+                ctx.drawImage( 
+                cannonballImage,cannonballs[i].x,cannonballs[i].y 
+                 );
+        }
+
+	
 
 
 	if(isbuilding){
