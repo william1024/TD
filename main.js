@@ -147,7 +147,7 @@ function draw(){
 	    ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
 	}
 	
-        for (var i=0; i<enemies.length; i++){
+        for (var i=0; i<cannonballs.length; i++){
 		cannonballs[i].move();
                 ctx.drawImage( 
                 cannonballImage,cannonballs[i].x,cannonballs[i].y 
