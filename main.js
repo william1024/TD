@@ -7,28 +7,46 @@ var towerbuttonImg = document.createElement("img");
 towerbuttonImg.src = "images/tower-btn.png";
 var towerImg = document.createElement("img");
 towerImg.src = "images/tower.png";
+var crosshairImg = document.createElement("img");
+crosshairImg.src = "images/crosshair.png";
+
 var hp = 100;
 var FPS=60;
 var isbuilding = false;
 var cursor={x:0,y:0}
 var tower = {
 	range: 96,
-	aimingEnemyId: null
-        searchEnemy: function(){
-        for(var i=0; i<enemies.length; i++){
-            var distance = Math.sqrt( 
-                Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
-            );
-            if (distance<=this.range) {
-                this.aimingEnemyId = i;
-                return;
-            }
-        }
+	aimingEnemyId: null,
+	fireRate:1,
+	readyToShootTime:1,
+	searchEnemy: function(){
+		for(var i=0; i<enemies.length; i++){
+	        var distance = Math.sqrt( 
+	            Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
+	        );
+	        if (distance<=this.range) {
+	            this.aimingEnemyId = i;
+	            return;
+	        }
+	    }
         this.aimingEnemyId = null;
-    }
+    },
+    shoot: function(){
+        var newCannonball = new Cannonball(this);
+        cannonballs.push( newCannonball );
+    f}
 };
 
 };
+
+var connonballs = []
+function Connonball () {
+    this.speed = 320;
+    this.damage = 5;
+}
+
+
+
 var enemies = [];
 function Enemy(){ 
         this.x = 96;
@@ -56,7 +74,6 @@ function Enemy(){
         }
 	};
 }
-
 
 var enemyPath = [
     {x:96,y:64},	
@@ -107,9 +124,15 @@ function draw(){
 	}
 	tower.searchEnemy();
         if ( tower.aimingEnemyId!=null ) {
-    var id = tower.aimingEnemyId;
-    ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
-}
+	    var id = tower.aimingEnemyId;
+	    ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
+	}
+	
+	tower.searchEnemy();
+	if ( tower.aimingEnemyId!=null ) {
+	    var id = tower.aimingEnemyId;
+	    ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
+	}
 	
 	if(isbuilding){
 		ctx.drawImage(towerImg,cursor.x,cursor.y);
