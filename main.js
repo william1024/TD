@@ -51,6 +51,11 @@ function Cannonball (tower) {
     this.x = tower.x+16;
     this.y = tower.y;
     this.direction = getUnitVector(this.x, this.y, aimedEnemy.x, aimedEnemy.y);
+    this.move = function(){
+	this.x += this.direction.x*this.speed/FPS;
+	this.y += this.direction.y*this.speed/FPS;
+     }
+
 }
 
 
