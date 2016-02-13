@@ -143,8 +143,10 @@ function draw(){
 	}
 	
 	for(var i = 0;i < cannonballs.length; i++)
-	var cannonballImg = document.createElement("img");
-        cannonballImg.src = "images/cannon-ball.png";
+	ctx.drawImage( 
+        cannonballImage,cannonballs[i].x,cannonballs[i].y 
+        );
+
 
 	if(isbuilding){
 		ctx.drawImage(towerImg,cursor.x,cursor.y);
